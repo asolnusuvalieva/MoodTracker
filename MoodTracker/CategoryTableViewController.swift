@@ -9,16 +9,16 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+    var categories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello, World! CategoryTableViewController just opened")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.leftBarButtonItem = editButtonItem
     }
 
     // MARK: - Table view data source
@@ -87,5 +87,11 @@ class CategoryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //MARK: - Private Methods
+    func loadSampleCategories(){
+        
+    }
 
 }

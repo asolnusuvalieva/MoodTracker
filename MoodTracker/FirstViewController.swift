@@ -10,15 +10,14 @@ import UIKit
 
 class FirstViewController: UIViewController {
     //MARK: - Properties
-    
     @IBOutlet weak var writeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         writeButton.layer.cornerRadius = 20.0
-        print("Hello, World!")
     }
 
+    
 
 }
 

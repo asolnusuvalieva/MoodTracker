@@ -74,7 +74,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="Zhs-mY-5cS" kind="relationship" relationship="viewControllers" id="hTk-3o-jur"/>
+                        <segue destination="tUI-pa-NIL" kind="relationship" relationship="viewControllers" id="hTk-3o-jur"/>
                         <segue destination="Elx-xF-8Ts" kind="relationship" relationship="viewControllers" id="bbq-cz-R6K"/>
                     </connections>
                 </tabBarController>
@@ -86,17 +86,34 @@
         <scene sceneID="i2D-sP-9j8">
             <objects>
                 <tableViewController id="Zhs-mY-5cS" customClass="CategoryTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPv-HW-MjY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPv-HW-MjY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="r25-lC-lmi">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="50" id="r25-lC-lmi" customClass="CategoryTableViewCell" customModule="MoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r25-lC-lmi" id="NWA-om-AQm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-x7-4Kk">
+                                            <rect key="frame" x="364" y="10" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="0.070588235289999995" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHn-p0-Fjk">
+                                            <rect key="frame" x="20" y="11" width="336" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -105,11 +122,13 @@
                             <outlet property="delegate" destination="Zhs-mY-5cS" id="Khm-Kh-EvB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Categories" image="rectangle.3.offgrid.fill" catalog="system" id="rDG-6o-1xL"/>
+                    <navigationItem key="navigationItem" title="Categories" id="eZM-Ch-4RO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JtJ-dt-LNu"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHq-Rj-qyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="355"/>
+            <point key="canvasLocation" x="1752.1739130434785" y="354.91071428571428"/>
         </scene>
         <!--Notes-->
         <scene sceneID="LD7-Q6-WJh">
@@ -138,7 +157,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmJ-CS-uyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="0.0"/>
+            <point key="canvasLocation" x="2618.840579710145" y="0.0"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="q7B-dp-mem">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tUI-pa-NIL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" image="rectangle.3.offgrid.fill" catalog="system" id="rDG-6o-1xL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YL6-R2-ain">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zhs-mY-5cS" kind="relationship" relationship="rootViewController" id="Gm2-4Z-MpQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uX-Nj-bYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842.02898550724649" y="354.91071428571428"/>
         </scene>
     </scenes>
     <resources>
