@@ -9,17 +9,21 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+    //MARK: Properties
     var categories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleCategories()
+        // Use the edit button item provided by the table view controller.
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = editButtonItem
+        
+        // Load the sample data.
+        loadSampleCategories()
     }
 
     // MARK: - Table view data source
@@ -30,12 +34,12 @@ class CategoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return categories.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "CategoryTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CategoryTableViewCell else {
             fatalError("The dequeued cell is not an instance of CategoryTableViewCell.")
@@ -45,6 +49,7 @@ class CategoryTableViewController: UITableViewController {
         let category = categories[indexPath.row]
         cell.categoryName.text = category.name
         cell.categoryColor.backgroundColor = category.color
+        
         return cell
     }
     

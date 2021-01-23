@@ -89,11 +89,9 @@
 			children = (
 				EE85594E25B7056E00B37D8F /* AppDelegate.swift */,
 				EE85595025B7056E00B37D8F /* SceneDelegate.swift */,
-				EE85595225B7056E00B37D8F /* FirstViewController.swift */,
-				EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */,
-				EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */,
-				EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */,
-				EEC313B225BC5277000A151D /* Category.swift */,
+				EEC313B925BC6E74000A151D /* View Controllers */,
+				EEC313B825BC6E4B000A151D /* Data Model */,
+				EEC313BA25BC6EA9000A151D /* Custom View Files */,
 				EE85595625B7056E00B37D8F /* Main.storyboard */,
 				EE85595925B7056F00B37D8F /* Assets.xcassets */,
 				EE85595B25B7056F00B37D8F /* LaunchScreen.storyboard */,
@@ -109,6 +107,32 @@
 				EE85596925B7057000B37D8F /* Info.plist */,
 			);
 			path = MoodTrackerTests;
+			sourceTree = "<group>";
+		};
+		EEC313B825BC6E4B000A151D /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEC313B225BC5277000A151D /* Category.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		EEC313B925BC6E74000A151D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE85595225B7056E00B37D8F /* FirstViewController.swift */,
+				EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */,
+				EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EEC313BA25BC6EA9000A151D /* Custom View Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */,
+			);
+			path = "Custom View Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
