@@ -9,10 +9,13 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    //MARK: - Properties
+    
+    @IBOutlet weak var writeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        writeButton.layer.cornerRadius = 20.0
         
     }
 
