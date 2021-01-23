@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         writeButton.layer.cornerRadius = 20.0
-        
+        print("Hello, World!")
     }
 
 
