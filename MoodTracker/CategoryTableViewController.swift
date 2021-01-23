@@ -13,6 +13,7 @@ class CategoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSampleCategories()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,23 +26,28 @@ class CategoryTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return categories.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "CategoryTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CategoryTableViewCell else {
+            fatalError("The dequeued cell is not an instance of CategoryTableViewCell.")
+        }
+        
+        // Fetches the appropriate category for the data source layout.
+        let category = categories[indexPath.row]
+        cell.categoryName.text = category.name
+        cell.categoryColor.backgroundColor = category.color
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,7 +97,19 @@ class CategoryTableViewController: UITableViewController {
     
     //MARK: - Private Methods
     func loadSampleCategories(){
+        guard let category1 = Category(name: "Wanna Die", color: .red) else{
+            fatalError("Unable to instantiate category1")
+        }
         
+        guard let category2 = Category(name: "Life is Amazing", color: .yellow) else{
+            fatalError("Unable to instantiate category2")
+        }
+        
+        guard let category3 = Category(name: "Proud", color: .green) else{
+            fatalError("Unable to instantiate category3")
+        }
+        
+        categories += [category1, category2, category3]
     }
 
 }
