@@ -17,11 +17,6 @@ class CategoryTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         self.navigationItem.leftBarButtonItem = editButtonItem
         
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        
         // Load the sample data.
         loadSampleCategories()
     }

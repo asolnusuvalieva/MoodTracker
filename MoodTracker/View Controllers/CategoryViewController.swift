@@ -57,7 +57,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate {
         
         let categoryName = name.text ?? ""
         let categoryColor: UIColor = .black
-        category = Category(name: categoryName, color: categoryColor)
+        category = Category(name: categoryName, color: categoryColor) //category or nil
     }
     
 
