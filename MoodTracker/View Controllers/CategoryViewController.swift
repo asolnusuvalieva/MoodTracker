@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CategoryViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Properties
@@ -36,9 +37,6 @@ class CategoryViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) { //gets called right after the method above
         navigationItem.title = name.text
     }
-
-    
-    
     
     
     // MARK: - Navigation
@@ -46,10 +44,20 @@ class CategoryViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed
+        
+        guard let button = sender as? UIBarButtonItem, button == saveButton else{
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let categoryName = name.text ?? ""
+        let categoryColor: UIColor = .black
+        category = Category(name: categoryName, color: categoryColor)
     }
     
 

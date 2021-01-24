@@ -188,7 +188,11 @@
                                 <action selector="cancel:" destination="EYd-mv-05Q" id="gKh-2p-m8g"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCh-nr-T68"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCh-nr-T68">
+                            <connections>
+                                <segue destination="Xig-o2-NkY" kind="unwind" unwindAction="unwindToCategoryListWithSender:" id="68T-dX-a6Z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="colorLabel" destination="g1v-Ct-206" id="ftR-Ij-meT"/>
@@ -197,6 +201,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJb-aY-f6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Xig-o2-NkY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3550.7246376811595" y="354.91071428571428"/>
         </scene>

@@ -89,15 +89,24 @@ class CategoryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+    //MARK: - Actions
+    @IBAction func unwindToCategoryList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? CategoryViewController, let category = sourceViewController.category {
+            // Add a new category.
+            let newIndexPath = IndexPath(row: categories.count, section: 0)
+            categories.append(category)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     
     
     //MARK: - Private Methods
