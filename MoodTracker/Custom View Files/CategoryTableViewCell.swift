@@ -10,8 +10,8 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     //MARK: Properties
-    @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var categoryColor: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var colorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

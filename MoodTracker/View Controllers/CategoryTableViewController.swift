@@ -47,9 +47,9 @@ class CategoryTableViewController: UITableViewController {
         
         // Fetches the appropriate category for the data source layout.
         let category = categories[indexPath.row]
-        cell.categoryName.text = category.name
-        cell.categoryColor.backgroundColor = category.color
-        
+        cell.name.text = category.name
+        cell.colorLabel.backgroundColor = category.color
+
         return cell
     }
     

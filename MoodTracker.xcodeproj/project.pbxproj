@@ -18,7 +18,7 @@
 		EE85596825B7057000B37D8F /* MoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85596725B7057000B37D8F /* MoodTrackerTests.swift */; };
 		EEC313B325BC5278000A151D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313B225BC5277000A151D /* Category.swift */; };
 		EEC313B525BC5585000A151D /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */; };
-		EEC313BE25BC7D2B000A151D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313BD25BC7D2B000A151D /* CategoryViewController.swift */; };
+		EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313BF25BC7F98000A151D /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		EE85596925B7057000B37D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEC313B225BC5277000A151D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		EEC313BD25BC7D2B000A151D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		EEC313BF25BC7F98000A151D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 				EE85595225B7056E00B37D8F /* FirstViewController.swift */,
 				EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */,
 				EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */,
-				EEC313BD25BC7D2B000A151D /* CategoryViewController.swift */,
+				EEC313BF25BC7F98000A151D /* CategoryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 				EE85595325B7056E00B37D8F /* FirstViewController.swift in Sources */,
 				EE31A9E725BB3396004064E5 /* CategoryTableViewController.swift in Sources */,
 				EE85594F25B7056E00B37D8F /* AppDelegate.swift in Sources */,
-				EEC313BE25BC7D2B000A151D /* CategoryViewController.swift in Sources */,
+				EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */,
 				EEC313B525BC5585000A151D /* CategoryTableViewCell.swift in Sources */,
 				EE85595125B7056E00B37D8F /* SceneDelegate.swift in Sources */,
 				EEC313B325BC5278000A151D /* Category.swift in Sources */,

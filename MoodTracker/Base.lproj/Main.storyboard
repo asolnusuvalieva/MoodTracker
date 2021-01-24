@@ -116,8 +116,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryColor" destination="m3u-x7-4Kk" id="rGv-bg-SfP"/>
-                                    <outlet property="categoryName" destination="AHn-p0-Fjk" id="ikD-Ax-GtB"/>
+                                    <outlet property="colorLabel" destination="m3u-x7-4Kk" id="pZ8-1u-LFd"/>
+                                    <outlet property="name" destination="AHn-p0-Fjk" id="Dl3-G4-cli"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -163,24 +163,38 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUL-da-3i0">
                                 <rect key="frame" x="75" y="390" width="264" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.86386986301369861" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Choose a color">
                                             <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" size="38" name="Futura-Medium"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="chooseColor:" destination="EYd-mv-05Q" eventType="touchUpInside" id="AX2-rd-vYC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="idF-jZ-GVA"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Category" id="fYt-vL-N3E">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qAg-j3-qXp"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qAg-j3-qXp">
+                            <connections>
+                                <action selector="cancel:" destination="EYd-mv-05Q" id="gKh-2p-m8g"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCh-nr-T68"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="colorLabel" destination="g1v-Ct-206" id="ftR-Ij-meT"/>
+                        <outlet property="name" destination="sj2-7y-RaR" id="DY2-jk-Fqo"/>
+                        <outlet property="saveButton" destination="UCh-nr-T68" id="dl4-dB-wP4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJb-aY-f6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

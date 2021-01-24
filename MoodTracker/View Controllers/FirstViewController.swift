@@ -17,7 +17,5 @@ class FirstViewController: UIViewController {
         writeButton.layer.cornerRadius = 20.0
     }
 
-    
-
 }
 
