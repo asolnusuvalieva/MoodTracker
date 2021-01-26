@@ -69,7 +69,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         }
         
         let categoryName = name.text ?? ""
-        let categoryColor: UIColor = .black
+        let categoryColor: UIColor = colorLabel.backgroundColor ?? .systemGray2
         category = Category(name: categoryName, color: categoryColor) //category or nil
     }
     
