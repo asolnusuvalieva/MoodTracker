@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "tree.png",
-      "idiom" : "iphone",
+      "filename" : "colorpicker.png",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

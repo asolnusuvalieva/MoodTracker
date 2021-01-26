@@ -149,37 +149,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-Ct-206">
-                                <rect key="frame" x="172" y="113" width="70" height="70"/>
+                                <rect key="frame" x="162" y="90" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selectCategoryColor" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-U5-f6j">
+                                <rect key="frame" x="107" y="385" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uyJ-AX-Y03" appends="YES" id="dXH-BO-sMW"/>
+                                </connections>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-7y-RaR">
-                                <rect key="frame" x="67" y="243" width="280" height="34"/>
+                                <rect key="frame" x="20" y="253" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUL-da-3i0">
-                                <rect key="frame" x="75" y="390" width="264" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to choose a color for a new category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWx-yW-w5c">
+                                <rect key="frame" x="52" y="356" width="310" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.86386986301369861" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Choose a color">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="38" name="Futura-Medium"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="chooseColor:" destination="EYd-mv-05Q" eventType="touchUpInside" id="AX2-rd-vYC"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idF-jZ-GVA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,6 +201,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJb-aY-f6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Xig-o2-NkY" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="uyJ-AX-Y03">
+                    <connections>
+                        <action selector="selectColor:" destination="EYd-mv-05Q" id="FMO-Vj-Ckb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3550.7246376811595" y="354.91071428571428"/>
         </scene>
@@ -279,6 +281,7 @@
         <image name="clouds" width="272.66665649414062" height="341.33334350585938"/>
         <image name="doc.append" catalog="system" width="115" height="128"/>
         <image name="rectangle.3.offgrid.fill" catalog="system" width="128" height="81"/>
+        <image name="selectCategoryColor" width="85.333335876464844" height="85.333335876464844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

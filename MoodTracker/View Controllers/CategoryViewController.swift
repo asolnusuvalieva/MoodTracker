@@ -75,13 +75,12 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
     
 
     //MARK: - Actions
-    @IBAction func chooseColor(_ sender: UIButton) {
+    
+    @IBAction func selectColor(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         name.resignFirstResponder()
         
-        
         if #available(iOS 14.0, *) {
-            
             //UIColorPickerViewController is a view controller that informs your app about user interaction with the color picker.
             let colorPicker = UIColorPickerViewController()
             
@@ -96,6 +95,5 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         } else {
             // Fallback on earlier versions
         }
-        
     }
 }
