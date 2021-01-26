@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class CategoryViewController: UIViewController, UITextFieldDelegate {
+class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPickerViewControllerDelegate {
     //MARK: - Properties
     
     @IBOutlet weak var name: UITextField!
@@ -38,7 +38,20 @@ class CategoryViewController: UIViewController, UITextFieldDelegate {
         navigationItem.title = name.text
     }
     
+    //MARK: - UIColorPickerViewControllerDelegate
     
+    @available(iOS 14.0, *)
+    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+        //Informs the delegate when the user selects a color. Called on every color selection done in the picker.
+        colorLabel.backgroundColor = viewController.selectedColor
+    }
+    
+    @available(iOS 14.0, *)
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        //Informs the delegate that the user dismissed the view controller. Called once you have finished picking the color.
+        colorLabel.backgroundColor = viewController.selectedColor
+    }
+
     // MARK: - Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -65,5 +78,24 @@ class CategoryViewController: UIViewController, UITextFieldDelegate {
     @IBAction func chooseColor(_ sender: UIButton) {
         // Hide the keyboard.
         name.resignFirstResponder()
+        
+        
+        if #available(iOS 14.0, *) {
+            
+            //UIColorPickerViewController is a view controller that informs your app about user interaction with the color picker.
+            let colorPicker = UIColorPickerViewController()
+            
+            //setting the Initial color of the Picker
+            colorPicker.selectedColor = .systemGray2
+            
+            // Make sure CategoryViewController is notified when the user picks an image.
+            colorPicker.delegate = self
+            
+            // Presenting the Color Picker
+            present(colorPicker, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
 }
