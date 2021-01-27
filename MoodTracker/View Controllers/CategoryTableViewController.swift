@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CategoryTableViewController: UITableViewController {
     //MARK: Properties
@@ -89,8 +90,29 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.identifier ?? "" {
+        case "addCategory":
+            os_log("Adding a new category.", log: OSLog.default, type: .debug)
+        case "editCategory":
+            guard let categoryViewController = segue.destination as? CategoryViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCategoryCell = sender as? CategoryTableViewCell else{
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCategoryCell) else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let category = categories[indexPath.row]
+            categoryViewController.category = category
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
     
     //MARK: - Actions
