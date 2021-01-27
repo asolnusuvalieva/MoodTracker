@@ -16,6 +16,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var colorInstructionLabel: UILabel!
     /*
     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
     or constructed as part of adding a new meal.
@@ -30,6 +31,14 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         
         // Enable the Save button only if the text field has a valid Category name.
         updateSaveButtonState()
+        
+        // Set up views if editing an existing Category.
+        if let category = self.category{
+            navigationItem.title = category.name
+            name.text = category.name
+            colorLabel.backgroundColor = category.color
+            colorInstructionLabel.text = "Tap to change the color"
+        }
     }
     
     //MARK: - UITextFieldDelegate
