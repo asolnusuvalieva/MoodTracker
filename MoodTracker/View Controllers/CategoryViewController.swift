@@ -44,6 +44,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) { //gets called right after the method above
+        updateSaveButtonState()
         navigationItem.title = name.text
     }
     

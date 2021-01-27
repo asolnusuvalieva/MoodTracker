@@ -120,7 +120,7 @@
                                 <connections>
                                     <outlet property="colorLabel" destination="m3u-x7-4Kk" id="pZ8-1u-LFd"/>
                                     <outlet property="name" destination="AHn-p0-Fjk" id="Dl3-G4-cli"/>
-                                    <segue destination="EYd-mv-05Q" kind="show" identifier="editCategory" trigger="accessoryAction" id="Rjl-9v-cRW"/>
+                                    <segue destination="EYd-mv-05Q" kind="show" identifier="editCategory" id="Yr1-dq-8cA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -146,17 +146,9 @@
             <objects>
                 <viewController id="EYd-mv-05Q" customClass="CategoryViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ogd-zD-xKd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-Ct-206">
-                                <rect key="frame" x="162" y="90" width="90" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-7y-RaR">
                                 <rect key="frame" x="20" y="253" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -178,9 +170,24 @@
                                     <outletCollection property="gestureRecognizers" destination="uyJ-AX-Y03" appends="YES" id="dXH-BO-sMW"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-Ct-206">
+                                <rect key="frame" x="162" y="86" width="90" height="90"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="kmz-na-c2z"/>
+                                    <constraint firstAttribute="width" constant="90" id="oqH-TK-TbJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idF-jZ-GVA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g1v-Ct-206" firstAttribute="centerX" secondItem="ogd-zD-xKd" secondAttribute="centerX" id="LtS-nx-wdv"/>
+                            <constraint firstItem="g1v-Ct-206" firstAttribute="top" secondItem="idF-jZ-GVA" secondAttribute="top" constant="30" id="Xeh-hH-yzz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Category" id="fYt-vL-N3E">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qAg-j3-qXp">
@@ -278,7 +285,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rjl-9v-cRW"/>
+        <segue reference="rgY-JB-ykn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
