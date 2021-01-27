@@ -48,6 +48,7 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Editing
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,7 +88,6 @@ class CategoryTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -114,11 +114,14 @@ class CategoryTableViewController: UITableViewController {
             fatalError("Unable to instantiate category2")
         }
         
-        guard let category3 = Category(name: "Proud", color: .green) else{
+        guard let category3 = Category(name: "Feeling proud", color: .green) else{
             fatalError("Unable to instantiate category3")
         }
+        guard let category4 = Category(name: "Feeling so inspired", color: .blue)else{
+            fatalError("Unable to instantiate category4")
+        }
         
-        categories += [category1, category2, category3]
+        categories += [category1, category2, category3, category4]
     }
 
 }

@@ -120,6 +120,7 @@
                                 <connections>
                                     <outlet property="colorLabel" destination="m3u-x7-4Kk" id="pZ8-1u-LFd"/>
                                     <outlet property="name" destination="AHn-p0-Fjk" id="Dl3-G4-cli"/>
+                                    <segue destination="EYd-mv-05Q" kind="show" identifier="editCategory" trigger="accessoryAction" id="Rjl-9v-cRW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -131,7 +132,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="eZM-Ch-4RO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JtJ-dt-LNu">
                             <connections>
-                                <segue destination="zYx-sI-S5o" kind="presentation" id="QRx-fo-jsE"/>
+                                <segue destination="zYx-sI-S5o" kind="presentation" identifier="addCategory" id="QRx-fo-jsE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -145,7 +146,7 @@
             <objects>
                 <viewController id="EYd-mv-05Q" customClass="CategoryViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ogd-zD-xKd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-Ct-206">
@@ -156,14 +157,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selectCategoryColor" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-U5-f6j">
-                                <rect key="frame" x="107" y="385" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="uyJ-AX-Y03" appends="YES" id="dXH-BO-sMW"/>
-                                </connections>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-7y-RaR">
                                 <rect key="frame" x="20" y="253" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,6 +170,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selectCategoryColor" translatesAutoresizingMaskIntoConstraints="NO" id="mvV-U5-f6j">
+                                <rect key="frame" x="107" y="402" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uyJ-AX-Y03" appends="YES" id="dXH-BO-sMW"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idF-jZ-GVA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,9 +274,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIK-vN-r7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640.579710144928" y="354.91071428571428"/>
+            <point key="canvasLocation" x="2645" y="742"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rjl-9v-cRW"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="clouds" width="272.66665649414062" height="341.33334350585938"/>

@@ -24,10 +24,19 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //handle the textField's user input through delegate callbacks.
         name.delegate = self
+        
+        // Enable the Save button only if the text field has a valid Category name.
+        updateSaveButtonState()
     }
     
     //MARK: - UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
@@ -62,7 +71,6 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed
-        
         guard let button = sender as? UIBarButtonItem, button == saveButton else{
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
@@ -75,7 +83,6 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
     
 
     //MARK: - Actions
-    
     @IBAction func selectColor(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         name.resignFirstResponder()
@@ -95,5 +102,12 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         } else {
             // Fallback on earlier versions
         }
+    }
+    
+    //MARK: - Private Methods
+    private func updateSaveButtonState(){
+        // Disable the Save button if the text field is empty.
+        let text = name.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
