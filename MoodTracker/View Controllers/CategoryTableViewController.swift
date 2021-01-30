@@ -152,7 +152,15 @@ class CategoryTableViewController: UITableViewController {
         
         categories += [category1, category2, category3, category4]
     }
-    
+    private func saveCategories(){
+        //Archiving
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(categories, toFile: Category.ArchiveURL.path)
+        if isSuccessfulSave{
+            os_log("Categories successfully saved.", log: OSLog.default, type: .debug)
+        }else{
+            os_log("Failed to save categories...", log: OSLog.default, type: .error)
+        }
+    }
     private func loadCategories() -> [Category]?{
         //Unarchiving
         return NSKeyedUnarchiver.unarchiveObject(withFile: Category.ArchiveURL.path) as? [Category]
