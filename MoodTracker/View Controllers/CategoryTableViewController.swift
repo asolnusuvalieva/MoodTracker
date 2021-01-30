@@ -18,8 +18,13 @@ class CategoryTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         self.navigationItem.leftBarButtonItem = editButtonItem
         
-        // Load the sample data.
-        loadSampleCategories()
+        // Load any saved meals, otherwise load sample data.
+        if let savedCategories = loadCategories(){
+            categories += savedCategories
+        }else{
+            //Load the sample data
+            loadSampleCategories()
+        }
     }
 
     // MARK: - Table view data source
@@ -65,6 +70,7 @@ class CategoryTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             categories.remove(at: indexPath.row)
+            saveCategories()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -129,6 +135,9 @@ class CategoryTableViewController: UITableViewController {
                 categories.append(category)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            
+            //Save categories
+            saveCategories()
         }
     }
     
@@ -152,6 +161,7 @@ class CategoryTableViewController: UITableViewController {
         
         categories += [category1, category2, category3, category4]
     }
+    
     private func saveCategories(){
         //Archiving
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(categories, toFile: Category.ArchiveURL.path)
