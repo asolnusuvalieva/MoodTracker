@@ -152,5 +152,10 @@ class CategoryTableViewController: UITableViewController {
         
         categories += [category1, category2, category3, category4]
     }
+    
+    private func loadCategories() -> [Category]?{
+        //Unarchiving
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Category.ArchiveURL.path) as? [Category]
+    }
 
 }
