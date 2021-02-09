@@ -171,6 +171,14 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bb5-aj-91j"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HUH-WO-dbO"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryLabel" destination="bjs-sr-pYy" id="tic-mv-THq"/>
+                        <outlet property="colorLabel" destination="trt-Hd-Ina" id="8oi-L5-BcX"/>
+                        <outlet property="notePlaceholderLabel" destination="gqG-vr-Vfz" id="rZ5-3Z-hM5"/>
+                        <outlet property="textTextView" destination="UQa-ip-8O8" id="gHA-kM-HjN"/>
+                        <outlet property="titlePlaceholderLabel" destination="fl8-RP-J6e" id="3aj-eo-AWI"/>
+                        <outlet property="titleTextView" destination="p5O-KM-Edp" id="bn6-R6-6uG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoW-ig-B06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

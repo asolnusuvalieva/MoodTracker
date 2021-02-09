@@ -8,14 +8,29 @@
 
 import UIKit
 
-class NoteViewController: UITableViewController {
+class NoteViewController: UITableViewController, UITextViewDelegate {
+    //MARK: Properties
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var textTextView:UITextView!
+    @IBOutlet weak var colorLabel: UILabel!
     
-
+    
+    //Placeholder Labels
+    @IBOutlet weak var titlePlaceholderLabel: UILabel!
+    @IBOutlet weak var notePlaceholderLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextView.delegate = self
     }
+    
+    
+    
+    //MARK: - TextViewDelegate
+    
 
-//    // MARK: - Table view data source
+    // MARK: - Table view data source
 //
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
@@ -41,6 +56,8 @@ class NoteViewController: UITableViewController {
 //    }
     
 
+    //MARK: TableView Editing
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -84,5 +101,8 @@ class NoteViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     
+    //MARK: - Actions
+    
+    //MARK: - Private Methods 
 
 }
