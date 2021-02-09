@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE315B9625D2C6A1003286C2 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE315B9525D2C6A1003286C2 /* NoteViewController.swift */; };
 		EE31A9E525BB3169004064E5 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */; };
 		EE31A9E725BB3396004064E5 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */; };
 		EE85594F25B7056E00B37D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85594E25B7056E00B37D8F /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE315B9525D2C6A1003286C2 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		EE85594B25B7056D00B37D8F /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				EE31A9E625BB3396004064E5 /* CategoryTableViewController.swift */,
 				EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */,
 				EEC313BF25BC7F98000A151D /* CategoryViewController.swift */,
+				EE315B9525D2C6A1003286C2 /* NoteViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				EE31A9E525BB3169004064E5 /* NoteTableViewController.swift in Sources */,
 				EE85595325B7056E00B37D8F /* FirstViewController.swift in Sources */,
 				EE31A9E725BB3396004064E5 /* CategoryTableViewController.swift in Sources */,
+				EE315B9625D2C6A1003286C2 /* NoteViewController.swift in Sources */,
 				EE85594F25B7056E00B37D8F /* AppDelegate.swift in Sources */,
 				EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */,
 				EEC313B525BC5585000A151D /* CategoryTableViewCell.swift in Sources */,
