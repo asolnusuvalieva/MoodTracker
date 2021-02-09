@@ -12,13 +12,8 @@ class NoteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello, World! NoteTableViewController just opened :)")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+         self.navigationItem.rightBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
     }
 
     // MARK: - Table view data source
