@@ -23,6 +23,9 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
         //handle the textView's user input through delegate callbacks.
         titleTextView.delegate = self
         textTextView.delegate = self
+        
+        //Adding done button in the tool bar for textTextView
+        textTextView.addDoneButton()
     }
     
     //MARK: - TextViewDelegate
@@ -34,12 +37,10 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        //in case of titleTextView, the keyboard should be dismissed when `return` is tapped
         if(textView == titleTextView && text == "\n") {
             textView.resignFirstResponder()
             return false
-        }
-        if(textView == textTextView){
-            view.endEditing(true)
         }
         
         return true
