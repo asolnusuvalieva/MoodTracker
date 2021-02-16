@@ -14,20 +14,34 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var textTextView:UITextView!
     @IBOutlet weak var colorLabel: UILabel!
-    
-    
-    //Placeholder Labels
-    @IBOutlet weak var titlePlaceholderLabel: UILabel!
-    @IBOutlet weak var notePlaceholderLabel: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //handle the textView's user input through delegate callbacks.
         titleTextView.delegate = self
+        textTextView.delegate = self
     }
     
-    
-    
     //MARK: - TextViewDelegate
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        saveButton.isEnabled = false
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        updateSaveButtonState()
+        navigationItem.title = titleTextView.text
+    }
     
 
     // MARK: - Table view data source
@@ -95,7 +109,10 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
 
     
     // MARK: - Navigation
-
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -103,6 +120,12 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     //MARK: - Actions
     
-    //MARK: - Private Methods 
-
+    
+    //MARK: - Private Methods
+    private func updateSaveButtonState(){
+        // Disable the Save button if the text field is empty.
+        let title = titleTextView.text ?? ""
+        let text = textTextView.text ?? ""
+        saveButton.isEnabled = !text.isEmpty && !title.isEmpty
+    }
 }

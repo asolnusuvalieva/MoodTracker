@@ -171,6 +171,7 @@ class CategoryTableViewController: UITableViewController {
             os_log("Failed to save categories...", log: OSLog.default, type: .error)
         }
     }
+    
     private func loadCategories() -> [Category]?{
         //Unarchiving
         return NSKeyedUnarchiver.unarchiveObject(withFile: Category.ArchiveURL.path) as? [Category]

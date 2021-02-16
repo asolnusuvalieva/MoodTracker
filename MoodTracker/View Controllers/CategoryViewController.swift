@@ -18,7 +18,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
     
     @IBOutlet weak var colorInstructionLabel: UILabel!
     /*
-    This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+    This value is either passed by `CategoryTableViewController` in `prepare(for:sender:)`
     or constructed as part of adding a new meal.
     */
     var category: Category?
@@ -51,6 +51,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         textField.resignFirstResponder()
         return true
     }
+    
     
     func textFieldDidEndEditing(_ textField: UITextField) { //gets called right after the method above
         updateSaveButtonState()
