@@ -18,6 +18,7 @@
 		EE85595A25B7056F00B37D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE85595925B7056F00B37D8F /* Assets.xcassets */; };
 		EE85595D25B7056F00B37D8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE85595B25B7056F00B37D8F /* LaunchScreen.storyboard */; };
 		EE85596825B7057000B37D8F /* MoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85596725B7057000B37D8F /* MoodTrackerTests.swift */; };
+		EE8F9CB025DC288D007AE5EB /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */; };
 		EEC313B325BC5278000A151D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313B225BC5277000A151D /* Category.swift */; };
 		EEC313B525BC5585000A151D /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */; };
 		EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC313BF25BC7F98000A151D /* CategoryViewController.swift */; };
@@ -49,6 +50,7 @@
 		EE85596325B7057000B37D8F /* MoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE85596725B7057000B37D8F /* MoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerTests.swift; sourceTree = "<group>"; };
 		EE85596925B7057000B37D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		EEC313B225BC5277000A151D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		EEC313BF25BC7F98000A151D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */,
+				EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */,
 			);
 			path = "Custom View Files";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				EE85594F25B7056E00B37D8F /* AppDelegate.swift in Sources */,
 				EE315B9E25D2CA94003286C2 /* Note.swift in Sources */,
 				EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */,
+				EE8F9CB025DC288D007AE5EB /* UITextViewExtension.swift in Sources */,
 				EEC313B525BC5585000A151D /* CategoryTableViewCell.swift in Sources */,
 				EE85595125B7056E00B37D8F /* SceneDelegate.swift in Sources */,
 				EEC313B325BC5278000A151D /* Category.swift in Sources */,

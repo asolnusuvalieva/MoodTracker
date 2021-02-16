@@ -14,6 +14,7 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var textTextView:UITextView!
     @IBOutlet weak var colorLabel: UILabel!
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -26,13 +27,19 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     //MARK: - TextViewDelegate
     func textViewDidBeginEditing(_ textView: UITextView) {
-        saveButton.isEnabled = false
+        //during editing `saveButton` should be disabled
+        if textView == titleTextView || textView == textTextView{
+            saveButton.isEnabled = false
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
+        if(textView == titleTextView && text == "\n") {
             textView.resignFirstResponder()
             return false
+        }
+        if(textView == textTextView){
+            view.endEditing(true)
         }
         
         return true
@@ -123,7 +130,7 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     //MARK: - Private Methods
     private func updateSaveButtonState(){
-        // Disable the Save button if the text field is empty.
+        //Disable the Save button if the title and text are empty.
         let title = titleTextView.text ?? ""
         let text = textTextView.text ?? ""
         saveButton.isEnabled = !text.isEmpty && !title.isEmpty
