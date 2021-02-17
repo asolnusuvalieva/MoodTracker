@@ -54,7 +54,7 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
-    //MARK: - TableView Editing
+    //MARK: - TableView Editing 
 
     
     // Override to support conditional editing of the table view.

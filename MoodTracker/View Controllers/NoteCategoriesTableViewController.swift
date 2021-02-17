@@ -1,35 +1,64 @@
 import UIKit
 
-class NoteCategoriesTableViewController: UITableViewController {
+class NoteCategoriesTableViewController: UITableViewController, UINavigationControllerDelegate {
     //MARK: - Properties
-    var categories = [Category]()
+    var noteCategories = [Category]()
+    var noteCategory: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         if let categoryTableViewController = storyboard?.instantiateViewController(withIdentifier: "categoryTableViewController") as? CategoryTableViewController{
-            categories = categoryTableViewController.categories
+            categoryTableViewController.viewDidLoad()
+            noteCategories = categoryTableViewController.categories
         }
     }
+
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return noteCategories.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cellIdentifier = "NoteCategoriesTableViewControllerCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NoteCategoryTableViewCell else {
+            fatalError("The dequeued cell is not an instance of NoteCategoryTableViewCell.")
+        }
 
         // Configure the cell...
-
+        // Fetches the appropriate category for the data source layout.
+        let noteCategory = noteCategories[indexPath.row]
+        cell.name.text = noteCategory.name
+        cell.colorLabel.backgroundColor = noteCategory.color
+        
         return cell
     }
-    */
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
+        noteCategory = noteCategories[indexPath.row]
+        if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+    }
+    
+    //MARK: - UINavigationController Delegate
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let noteViewController = viewController as? NoteViewController{
+            if let noteCategory = noteCategory{
+                noteViewController.colorLabel.backgroundColor = noteCategory.color
+                noteViewController.categoryLabel.text = noteCategory.name
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -75,5 +104,7 @@ class NoteCategoriesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Private Methods
 
 }

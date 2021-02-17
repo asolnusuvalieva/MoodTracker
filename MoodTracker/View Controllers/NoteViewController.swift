@@ -17,6 +17,12 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    /*
+    This value is either passed by `NoteTableViewController` in `prepare(for:sender:)`
+    or constructed as part of adding a new note.
+    */
+    var note: Note?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,10 +59,7 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: - Table View
 //    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        if indexPath.section == 0 && indexPath.row == 1{
-//            print("Doing right")
-//            performSegue(withIdentifier: "NewNoteCategoryChoosing", sender: self)
-//        }
+//       
 //    }
     
     // MARK: - Navigation
