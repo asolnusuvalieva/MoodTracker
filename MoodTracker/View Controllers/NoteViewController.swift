@@ -65,7 +65,6 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
     
     //MARK: - Actions

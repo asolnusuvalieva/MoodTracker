@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE1D756A25DD3CE10020A76B /* NoteCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1D756925DD3CE10020A76B /* NoteCategoriesTableViewController.swift */; };
+		EE1D756E25DD400C0020A76B /* NoteCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1D756D25DD400C0020A76B /* NoteCategoryTableViewCell.swift */; };
 		EE315B9625D2C6A1003286C2 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE315B9525D2C6A1003286C2 /* NoteViewController.swift */; };
 		EE315B9E25D2CA94003286C2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE315B9D25D2CA94003286C2 /* Note.swift */; };
 		EE31A9E525BB3169004064E5 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE1D756925DD3CE10020A76B /* NoteCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoriesTableViewController.swift; sourceTree = "<group>"; };
+		EE1D756D25DD400C0020A76B /* NoteCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		EE315B9525D2C6A1003286C2 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		EE315B9D25D2CA94003286C2 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				EE31A9E425BB3169004064E5 /* NoteTableViewController.swift */,
 				EEC313BF25BC7F98000A151D /* CategoryViewController.swift */,
 				EE315B9525D2C6A1003286C2 /* NoteViewController.swift */,
+				EE1D756925DD3CE10020A76B /* NoteCategoriesTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			children = (
 				EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */,
 				EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */,
+				EE1D756D25DD400C0020A76B /* NoteCategoryTableViewCell.swift */,
 			);
 			path = "Custom View Files";
 			sourceTree = "<group>";
@@ -249,10 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE31A9E525BB3169004064E5 /* NoteTableViewController.swift in Sources */,
+				EE1D756E25DD400C0020A76B /* NoteCategoryTableViewCell.swift in Sources */,
 				EE85595325B7056E00B37D8F /* FirstViewController.swift in Sources */,
 				EE31A9E725BB3396004064E5 /* CategoryTableViewController.swift in Sources */,
 				EE315B9625D2C6A1003286C2 /* NoteViewController.swift in Sources */,
 				EE85594F25B7056E00B37D8F /* AppDelegate.swift in Sources */,
+				EE1D756A25DD3CE10020A76B /* NoteCategoriesTableViewController.swift in Sources */,
 				EE315B9E25D2CA94003286C2 /* Note.swift in Sources */,
 				EEC313C025BC7F98000A151D /* CategoryViewController.swift in Sources */,
 				EE8F9CB025DC288D007AE5EB /* UITextViewExtension.swift in Sources */,

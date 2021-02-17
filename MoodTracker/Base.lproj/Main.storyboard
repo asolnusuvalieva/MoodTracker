@@ -123,7 +123,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Zhs-mY-5cS" kind="show" identifier="NewNoteCategoryChoosing" id="gpg-gi-3hV"/>
+                                            <segue destination="R3I-aQ-IPF" kind="show" id="Lte-19-wtT"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -178,6 +178,35 @@
             </objects>
             <point key="canvasLocation" x="2713.04347826087" y="-416.51785714285711"/>
         </scene>
+        <!--NoteCategories-->
+        <scene sceneID="lwu-K6-sZZ">
+            <objects>
+                <tableViewController title="NoteCategories" id="R3I-aQ-IPF" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ArB-Bd-Tx3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCategoriesTableViewControllerCell" id="TCP-xh-uor">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TCP-xh-uor" id="mqd-tf-crz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R3I-aQ-IPF" id="IxM-eW-L0C"/>
+                            <outlet property="delegate" destination="R3I-aQ-IPF" id="5hp-Zs-hAk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1Kt-62-CVw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gh-Su-4LZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3593" y="-417"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -200,9 +229,9 @@
         <!--Categories-->
         <scene sceneID="i2D-sP-9j8">
             <objects>
-                <tableViewController id="Zhs-mY-5cS" customClass="CategoryTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="categoryTableViewController" id="Zhs-mY-5cS" customClass="CategoryTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YPv-HW-MjY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -252,14 +281,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHq-Rj-qyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="363"/>
+            <point key="canvasLocation" x="1803" y="368"/>
         </scene>
         <!--New Category-->
         <scene sceneID="bpS-vL-Xmb">
             <objects>
                 <viewController id="EYd-mv-05Q" customClass="CategoryViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ogd-zD-xKd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sj2-7y-RaR">
@@ -284,7 +313,7 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-Ct-206">
-                                <rect key="frame" x="162" y="86" width="90" height="90"/>
+                                <rect key="frame" x="162" y="118" width="90" height="90"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="kmz-na-c2z"/>
@@ -438,7 +467,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Yr1-dq-8cA"/>
-        <segue reference="gpg-gi-3hV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
