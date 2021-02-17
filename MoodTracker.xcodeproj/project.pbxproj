@@ -147,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				EEC313B425BC5585000A151D /* CategoryTableViewCell.swift */,
-				EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */,
 				EE1D756D25DD400C0020A76B /* NoteCategoryTableViewCell.swift */,
+				EE8F9CAF25DC288D007AE5EB /* UITextViewExtension.swift */,
 			);
 			path = "Custom View Files";
 			sourceTree = "<group>";

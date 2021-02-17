@@ -1,15 +1,10 @@
-//
-//  NoteCategoryTableViewCell.swift
-//  MoodTracker
-//
-//  Created by Asol on 2/17/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
 
 class NoteCategoryTableViewCell: UITableViewCell {
-
+    //MARK: Properties
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var colorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
