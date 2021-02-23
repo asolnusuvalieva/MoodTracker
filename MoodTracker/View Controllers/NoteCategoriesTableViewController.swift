@@ -6,8 +6,8 @@ class NoteCategoriesTableViewController: UITableViewController, UINavigationCont
     var noteCategories = [Category]()
     var noteCategory: Category? //a user may not choose anything and navigate back
     
-    var selectedSection = -1
-    var selectedRow = -1
+    var selectedSection: Int!
+    var selectedRow: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,10 @@ class NoteCategoriesTableViewController: UITableViewController, UINavigationCont
         cell.name.text = noteCategory.name
         cell.colorLabel.backgroundColor = noteCategory.color
         
+        //If a user wants to reselect another category, then in this scene, there should already be a checkmark
+        if(selectedRow == indexPath.row && selectedSection == indexPath.section){
+            cell.accessoryType = .checkmark
+        }
         return cell
     }
 
@@ -63,11 +67,14 @@ class NoteCategoriesTableViewController: UITableViewController, UINavigationCont
     
     //MARK: - UINavigationController Delegate
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        //Passing noteCategory
         guard let validNoteCategory = noteCategory else{return}
         guard let noteViewController = viewController as? NoteViewController else{return}
        
         noteViewController.colorLabel.backgroundColor = validNoteCategory.color
         noteViewController.categoryLabel.text = validNoteCategory.name
+        noteViewController.selectedRow = selectedRow
+        noteViewController.selectedSection = selectedSection
     }
 
 }
