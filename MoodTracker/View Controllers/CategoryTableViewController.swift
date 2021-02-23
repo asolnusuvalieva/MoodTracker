@@ -30,7 +30,6 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -55,7 +54,6 @@ class CategoryTableViewController: UITableViewController {
     }
     
     //MARK: - TableView Editing 
-
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

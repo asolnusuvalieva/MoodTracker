@@ -9,6 +9,8 @@
 import UIKit
 
 class NoteTableViewController: UITableViewController {
+    //MARK: - Properties
+    var notes = [Note]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,28 @@ class NoteTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        notes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "NoteTableViewCell"
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NoteTableViewCell else {
+            fatalError("The dequeued cell is not an instance of NoteTableViewCell.")
+        }
+    
+        // Fetches the appropriate note for the data source layout.
+        let note = notes[indexPath.row]
+        cell.title.text = note.title
+        cell.textExtract.text = note.text //FIXME
+        
+        return cell
+    }
     
     /*
     // MARK: - Navigation
