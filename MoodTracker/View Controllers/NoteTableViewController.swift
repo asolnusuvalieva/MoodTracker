@@ -36,6 +36,7 @@ class NoteTableViewController: UITableViewController {
         // Fetches the appropriate note for the data source layout.
         let note = notes[indexPath.row]
         cell.title.text = note.title
+        cell.colorLabel.backgroundColor = note.category.color
         cell.textExtract.text = note.text //FIXME
         
         return cell
@@ -50,5 +51,30 @@ class NoteTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    //MARK: - Private Methods
+    func loadSampleNotes(){
+        guard let category1 = Category(name: "Feeling Proud", color: .brown) else{
+            fatalError("Unable to instantiate category1")
+        }
+        guard let note1 = Note(title: "Won Scholarship!", category: category1, text: "Today I opened my email from Harvard to read that I was admitted for the full ride scholarship...") else{
+            fatalError("Unable to instantiate note1")
+        }
+        
+        guard let category2 = Category(name: "Feeling Happy", color: .blue) else{
+            fatalError("Unable to instantiate category2")
+        }
+        
+        guard let note2 = Note(title: "Bought a book!", category: category2, text: "Today I bought a book in the local store...") else{
+            fatalError("Unable to instantiate note2")
+        }
+        
+        guard let category3 = Category(name: "Feeling Grateful", color: .red) else{
+            fatalError("Unable to instantiate category3")
+        }
+        guard let note3 = Note(title: "Wished HB to my mom!", category: category3, text: "Today we celebrated mom's BD...") else{
+            fatalError("Unable to instantiate note3")
+        }
+        
+        notes += [note1, note2, note3]
+    }
 }
