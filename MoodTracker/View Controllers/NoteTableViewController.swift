@@ -1,12 +1,5 @@
-//
-//  NoteTableViewController.swift
-//  MoodTracker
-//
-//  Created by Asol on 1/22/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
+//Important: NoteTableViewController has no right access to categories, it is given some category
 
 class NoteTableViewController: UITableViewController {
     //MARK: - Properties
@@ -14,6 +7,7 @@ class NoteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSampleNotes()
          self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
     }
 
@@ -51,6 +45,16 @@ class NoteTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Actions
+    @IBAction func unwindToNoteList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? NoteViewController, let note = sourceViewController.note {
+            
+            
+        }
+        
+        
+    }
     //MARK: - Private Methods
     func loadSampleNotes(){
         guard let category1 = Category(name: "Feeling Proud", color: .brown) else{

@@ -164,7 +164,11 @@
                                 <action selector="cancel:" destination="hzq-5M-TWa" id="xx8-yW-aUt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HUH-WO-dbO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HUH-WO-dbO">
+                            <connections>
+                                <segue destination="HML-nT-nIk" kind="unwind" unwindAction="unwindToNoteListWithSender:" id="XCt-YJ-2aS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="bjs-sr-pYy" id="tic-mv-THq"/>
@@ -175,6 +179,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoW-ig-B06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="HML-nT-nIk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2713.04347826087" y="-416.51785714285711"/>
         </scene>
@@ -398,9 +403,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NoteName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poD-Rx-qYg">
-                                            <rect key="frame" x="8" y="4" width="365" height="25"/>
+                                            <rect key="frame" x="8" y="4" width="375" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="25"/>
+                                            <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -412,7 +417,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfC-ga-jFW">
-                                            <rect key="frame" x="381" y="4" width="25" height="25"/>
+                                            <rect key="frame" x="391" y="9" width="15" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.72814948530000001" green="0.33870507799999999" blue="0.91697748400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -437,7 +442,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmJ-CS-uyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5744.9275362318849" y="-21.428571428571427"/>
+            <point key="canvasLocation" x="5542" y="-21"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q7B-dp-mem">

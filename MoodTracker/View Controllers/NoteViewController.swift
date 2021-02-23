@@ -13,7 +13,6 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     var selectedSection = -1
     var selectedRow = -1
     
-    
     /*
     This value is either passed by `NoteTableViewController` in `prepare(for:sender:)`
     or constructed as part of adding a new note.
