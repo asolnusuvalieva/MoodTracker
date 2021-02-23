@@ -1,20 +1,12 @@
-//
-//  NoteTableViewController.swift
-//  MoodTracker
-//
-//  Created by Asol on 2/9/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
-
+//SHOULD RETURN NOTE
 class NoteViewController: UITableViewController, UITextViewDelegate {
     //MARK: Properties
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var textTextView:UITextView!
     @IBOutlet weak var colorLabel: UILabel!
-    
+    @IBOutlet weak var textTextView:UITextView!
+
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
@@ -32,9 +24,11 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
         
         //Adding done button in the tool bar for textTextView
         textTextView.addDoneButton()
+        colorLabel.backgroundColor = .none
     }
     
     //MARK: - TextViewDelegate
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         //during editing `saveButton` should be disabled
         if textView == titleTextView || textView == textTextView{
@@ -57,21 +51,11 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
         navigationItem.title = titleTextView.text
     }
     
-    // MARK: - Table View
-//    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//       
-//    }
     
     // MARK: - Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        
+        dismiss(animated: true, completion: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
-    
-    //MARK: - Actions
-    
     
     //MARK: - Private Methods
     private func updateSaveButtonState(){

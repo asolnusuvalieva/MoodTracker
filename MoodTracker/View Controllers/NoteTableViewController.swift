@@ -12,7 +12,7 @@ class NoteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.rightBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
+         self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
     }
 
     // MARK: - Table view data source
