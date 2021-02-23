@@ -61,11 +61,9 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     
     // MARK: - Navigation
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NoteCategoriesTableViewControllerCell"{
+            
             guard let noteCategoriesTableViewController = segue.destination as? NoteCategoriesTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
@@ -80,6 +78,14 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
             noteCategoriesTableViewController.selectedSection = selectedSection
         }
     }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+            dismiss(animated: true, completion: nil)
+    }
+
+    
+    
+    
     //MARK: - Private Methods
     private func updateSaveButtonState(){
         //Disable the Save button if the title and text are empty.

@@ -1,13 +1,6 @@
-//
-//  Note.swift
-//  MoodTracker
-//
-//  Created by Asol on 2/9/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
 import os.log
+
 class Note{
     //MARK: - Properties
     var title: String
