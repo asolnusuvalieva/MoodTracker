@@ -9,6 +9,9 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
+    //MARK: - Properties
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var textExtract: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
