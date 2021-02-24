@@ -61,13 +61,18 @@ class NoteTableViewController: UITableViewController {
     //MARK: - Actions
     @IBAction func unwindToNoteList(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? NoteViewController, let note = sourceViewController.note {
-            //Add a new note
-            let newIndexPath = IndexPath(row: notes.count, section: 0)
-            notes.append(note)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                //Update an existing category
+                notes[selectedIndexPath.row] = note
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }else{
+                //Add a new note
+                let newIndexPath = IndexPath(row: notes.count, section: 0)
+                notes.append(note)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            
         }
-        
-        
     }
     //MARK: - Private Methods
     func loadSampleNotes(){
