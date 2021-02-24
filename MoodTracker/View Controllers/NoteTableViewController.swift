@@ -71,7 +71,6 @@ class NoteTableViewController: UITableViewController {
                 notes.append(note)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            
         }
     }
     //MARK: - Private Methods
