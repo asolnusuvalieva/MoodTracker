@@ -1,11 +1,3 @@
-//
-//  Category.swift
-//  MoodTracker
-//
-//  Created by Asol on 1/23/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
 import os.log
 class Category: NSObject, NSCoding{

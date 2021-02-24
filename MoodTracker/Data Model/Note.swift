@@ -13,13 +13,13 @@ class Note{
             return nil
         }
         
-        // The category must not be nil
-        guard let validCategory = category else {
+        // The text must not be empty
+        guard !text.isEmpty else {
             return nil
         }
         
-        // The text must not be empty
-        guard !text.isEmpty else {
+        // The category must not be nil
+        guard let validCategory = category else { // != nil
             return nil
         }
         
@@ -30,3 +30,12 @@ class Note{
     }
     
 }
+/*
+ The Logic Explanation:
+ All properties of  a note must not be nil.
+ 
+ When initializing a note,
+ 1) title != empty
+ 2) text != empty
+ 3) Category can be nil if user didn't choose anything. 
+ */

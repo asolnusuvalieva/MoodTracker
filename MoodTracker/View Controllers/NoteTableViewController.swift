@@ -31,20 +31,32 @@ class NoteTableViewController: UITableViewController {
         let note = notes[indexPath.row]
         cell.title.text = note.title
         cell.colorLabel.backgroundColor = note.category.color
-        cell.textExtract.text = note.text //FIXME
+        cell.textExtract.text = note.text + "..." 
         
         return cell
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "editNote"){
+            guard let NoteViewController = segue.destination as? NoteViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedNoteCell = sender as? NoteTableViewCell else{
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedNoteCell) else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let note = notes[indexPath.row]
+            NoteViewController.note = note
+        }
     }
-    */
+    
     
     //MARK: - Actions
     @IBAction func unwindToNoteList(sender: UIStoryboardSegue){
@@ -77,7 +89,7 @@ class NoteTableViewController: UITableViewController {
         guard let category3 = Category(name: "Feeling Grateful", color: .red) else{
             fatalError("Unable to instantiate category3")
         }
-        guard let note3 = Note(title: "Wished HB to my mom!", category: category3, text: "Today we celebrated mom's BD...") else{
+        guard let note3 = Note(title: "Wished HB to my mom!", category: category3, text: "Today we celebrated mom's BD, and we just had the best day in our lives! She sang a song for me and we'd think about what our life was like when we had our daddy...") else{
             fatalError("Unable to instantiate note3")
         }
         

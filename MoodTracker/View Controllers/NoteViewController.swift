@@ -90,7 +90,7 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
         let noteText = textTextView.text ?? ""
         
         let categoryName = noteCategoriesVisited ? categoryLabel.text! : ""
-        let categoryColor = noteCategoriesVisited ? colorLabel.backgroundColor! : .black
+        let categoryColor = noteCategoriesVisited ? colorLabel.backgroundColor! : nil //here we can't provide default color since we work only with existing categories 
         let category = Category(name: categoryName, color: categoryColor)// nil or category 
         self.note = Note(title: noteName, category: category, text: noteText) //note or nil
     }
@@ -98,9 +98,6 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     @IBAction func cancel(_ sender: UIBarButtonItem) {
             dismiss(animated: true, completion: nil)
     }
-
-    
-    
     
     //MARK: - Private Methods
     private func updateSaveButtonState(){

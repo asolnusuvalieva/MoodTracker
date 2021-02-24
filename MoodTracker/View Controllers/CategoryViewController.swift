@@ -1,11 +1,3 @@
-//
-//  CategoryViewController.swift
-//  MoodTracker
-//
-//  Created by Asol on 1/23/21.
-//  Copyright © 2021 Asol. All rights reserved.
-//
-
 import UIKit
 import os.log
 
@@ -97,7 +89,7 @@ class CategoryViewController: UIViewController, UITextFieldDelegate, UIColorPick
         }
         
         let categoryName = name.text ?? ""
-        let categoryColor: UIColor = colorLabel.backgroundColor ?? .systemGray2
+        let categoryColor: UIColor = colorLabel.backgroundColor ?? .systemGray2 //here you _can_ provide default gray color 
         category = Category(name: categoryName, color: categoryColor) //category or nil
     }
     

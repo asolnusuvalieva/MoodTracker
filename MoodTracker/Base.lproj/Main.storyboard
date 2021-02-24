@@ -73,7 +73,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="NoteViewController" id="hzq-5M-TWa" customClass="NoteViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9J5-Ui-3wa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -188,7 +188,7 @@
             <objects>
                 <tableViewController title="NoteCategories" id="R3I-aQ-IPF" customClass="NoteCategoriesTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ArB-Bd-Tx3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteTableViewCell" id="di8-MV-8NH" customClass="NoteTableViewCell" customModule="MoodTracker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteTableViewCell" id="di8-MV-8NH" customClass="NoteTableViewCell" customModule="MoodTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="di8-MV-8NH" id="s9U-U4-HAu">
@@ -430,6 +430,7 @@
                                     <outlet property="colorLabel" destination="GfC-ga-jFW" id="HbL-23-fe0"/>
                                     <outlet property="textExtract" destination="Dbh-dc-hqX" id="vbe-d4-jcr"/>
                                     <outlet property="title" destination="poD-Rx-qYg" id="Gvw-vq-ONQ"/>
+                                    <segue destination="hzq-5M-TWa" kind="show" identifier="editNote" id="EiA-Dp-QUZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -442,7 +443,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmJ-CS-uyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5540.579710144928" y="-21.428571428571427"/>
+            <point key="canvasLocation" x="5226" y="-21"/>
         </scene>
         <!--Categories-->
         <scene sceneID="q7B-dp-mem">
@@ -498,7 +499,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTZ-D4-Xef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4778" y="-21"/>
+            <point key="canvasLocation" x="4406" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nBE-l2-9nk">
@@ -522,6 +523,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Yr1-dq-8cA"/>
+        <segue reference="EiA-Dp-QUZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
