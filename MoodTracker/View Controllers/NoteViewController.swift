@@ -34,6 +34,15 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
         //Adding done button in the tool bar for textTextView
         textTextView.addDoneButton()
         colorLabel.backgroundColor = .none
+        
+        // Set up views if editing an existing Note
+        if let note = self.note{
+            navigationItem.title = note.title
+            titleTextView.text = note.title
+            textTextView.text = note.text
+            categoryLabel.text = note.category.name
+            colorLabel.backgroundColor = note.category.color
+        }
     }
     
     //MARK: - TextViewDelegate
