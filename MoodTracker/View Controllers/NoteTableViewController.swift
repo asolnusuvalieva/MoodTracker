@@ -1,5 +1,5 @@
 import UIKit
-//Important: NoteTableViewController has no right access to categories, it is given some category
+//Important: NoteTableViewController has no _direct_ access to categories, it is given some category
 
 class NoteTableViewController: UITableViewController {
     //MARK: - Properties
@@ -49,8 +49,10 @@ class NoteTableViewController: UITableViewController {
     //MARK: - Actions
     @IBAction func unwindToNoteList(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? NoteViewController, let note = sourceViewController.note {
-            
-            
+            //Add a new note
+            let newIndexPath = IndexPath(row: notes.count, section: 0)
+            notes.append(note)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
         
         
@@ -79,6 +81,13 @@ class NoteTableViewController: UITableViewController {
             fatalError("Unable to instantiate note3")
         }
         
-        notes += [note1, note2, note3]
+        guard let category4 = Category(name: "Feeling Strong", color: .purple) else{
+            fatalError("Unable to instantiate category4")
+        }
+        guard let note4 = Note(title: "YouTube video on the meaning of life", category: category4, text: "The video I watched yesterday morning gave me a different feeling...") else{
+            fatalError("Unable to instantiate note3")
+        }
+        
+        notes += [note1, note2, note3, note4]
     }
 }

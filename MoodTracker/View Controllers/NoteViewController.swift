@@ -1,4 +1,6 @@
 import UIKit
+import os.log
+
 //SHOULD RETURN NOTE
 class NoteViewController: UITableViewController, UITextViewDelegate {
     //MARK: Properties
@@ -12,7 +14,7 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     //Not that much relevant properties
     var selectedSection = -1
     var selectedRow = -1
-    
+    var noteCategoriesVisited = false
     /*
     This value is either passed by `NoteTableViewController` in `prepare(for:sender:)`
     or constructed as part of adding a new note.
@@ -61,6 +63,8 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
         if segue.identifier == "NoteCategoriesTableViewControllerCell"{
             
             guard let noteCategoriesTableViewController = segue.destination as? NoteCategoriesTableViewController else {
@@ -76,6 +80,19 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
             noteCategoriesTableViewController.selectedRow = selectedRow
             noteCategoriesTableViewController.selectedSection = selectedSection
         }
+        
+        // Configure the destination view controller only when the save button is pressed
+        guard let button = sender as? UIBarButtonItem, button == saveButton else{
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        let noteName = titleTextView.text ?? ""
+        let noteText = textTextView.text ?? ""
+        
+        let categoryName = noteCategoriesVisited ? categoryLabel.text! : ""
+        let categoryColor = noteCategoriesVisited ? colorLabel.backgroundColor! : .black
+        let category = Category(name: categoryName, color: categoryColor)// nil or category 
+        self.note = Note(title: noteName, category: category, text: noteText) //note or nil
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

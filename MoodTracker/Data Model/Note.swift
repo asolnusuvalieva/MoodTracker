@@ -7,14 +7,14 @@ class Note{
     var category: Category
     var text: String
     
-    init?(title: String, category: Category, text: String){
+    init?(title: String, category: Category?, text: String){
         // The title must not be empty
         guard !title.isEmpty else{
             return nil
         }
         
         // The category must not be nil
-        guard category != nil else {
+        guard let validCategory = category else {
             return nil
         }
         
@@ -25,7 +25,7 @@ class Note{
         
         // Initialize stored properties.
         self.title = title
-        self.category = category
+        self.category = validCategory
         self.text = text
     }
     

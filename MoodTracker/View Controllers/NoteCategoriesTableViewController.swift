@@ -73,6 +73,7 @@ class NoteCategoriesTableViewController: UITableViewController, UINavigationCont
        
         noteViewController.colorLabel.backgroundColor = validNoteCategory.color
         noteViewController.categoryLabel.text = validNoteCategory.name
+        noteViewController.noteCategoriesVisited = true
         noteViewController.selectedRow = selectedRow
         noteViewController.selectedSection = selectedSection
     }
