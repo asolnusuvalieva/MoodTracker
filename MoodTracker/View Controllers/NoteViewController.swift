@@ -105,7 +105,16 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddCategoryMode = presentingViewController is UINavigationController
+        if isPresentingInAddCategoryMode{
             dismiss(animated: true, completion: nil)
+        }else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }else{
+            fatalError("The NoteViewController is not inside a navigation controller.")
+        }
+
     }
     
     //MARK: - Private Methods
