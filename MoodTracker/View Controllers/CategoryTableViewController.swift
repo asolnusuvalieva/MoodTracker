@@ -18,7 +18,7 @@ class CategoryTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         self.navigationItem.leftBarButtonItem = editButtonItem
         
-        // Load any saved meals, otherwise load sample data.
+        // Load any saved categories, otherwise load sample data.
         if let savedCategories = loadCategories(){
             categories += savedCategories
         }else{

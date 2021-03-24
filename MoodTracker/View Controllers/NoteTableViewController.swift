@@ -10,6 +10,14 @@ class NoteTableViewController: UITableViewController {
         super.viewDidLoad()
         loadSampleNotes()
          self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
+       
+        // Load any saved notes, otherwise load sample data.
+        if let savedNotes = loadNotes(){
+            notes += savedNotes
+        }else{
+            //Load the sample data
+            loadSampleNotes()
+        }
     }
 
     // MARK: - Table view data source
