@@ -1,4 +1,5 @@
 import UIKit
+import os.log
 //Important: NoteTableViewController has no _direct_ access to categories, it is given some category
 
 class NoteTableViewController: UITableViewController {
@@ -105,5 +106,16 @@ class NoteTableViewController: UITableViewController {
         }
         
         notes += [note1, note2, note3, note4]
+    }
+    
+    private func saveNotes(){
+        //Archiving (Saving)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(notes, toFile: Note.ArchiveURL.path)
+        
+        if isSuccessfulSave{
+            os_log("Notes successfully saved.", log: OSLog.default, type: .debug)
+        }else{
+            os_log("Failed to save notes...", log: OSLog.default, type: .error)
+        }
     }
 }
