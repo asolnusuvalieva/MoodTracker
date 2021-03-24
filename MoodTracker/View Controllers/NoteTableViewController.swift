@@ -37,6 +37,24 @@ class NoteTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Editing
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            notes.remove(at: indexPath.row)
+            saveNotes()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } 
+    }
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,6 +90,9 @@ class NoteTableViewController: UITableViewController {
                 notes.append(note)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            
+            //Save notes
+            saveNotes()
         }
     }
     //MARK: - Private Methods
