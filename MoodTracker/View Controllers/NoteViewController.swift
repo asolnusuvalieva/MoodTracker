@@ -106,8 +106,8 @@ class NoteViewController: UITableViewController, UITextViewDelegate {
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddCategoryMode = presentingViewController is UINavigationController
-        if isPresentingInAddCategoryMode{
+        let isPresentingInAddNoteMode = presentingViewController is UINavigationController
+        if isPresentingInAddNoteMode{
             dismiss(animated: true, completion: nil)
         }else if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
