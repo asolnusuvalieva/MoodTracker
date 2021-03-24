@@ -118,4 +118,9 @@ class NoteTableViewController: UITableViewController {
             os_log("Failed to save notes...", log: OSLog.default, type: .error)
         }
     }
+    
+    private func loadNotes() -> [Note]?{
+        //Unarchiving (retrieving)
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Note.ArchiveURL.path) as? [Note]
+    }
 }
