@@ -288,6 +288,7 @@
                                 <connections>
                                     <outlet property="colorLabel" destination="m3u-x7-4Kk" id="pZ8-1u-LFd"/>
                                     <outlet property="name" destination="AHn-p0-Fjk" id="Dl3-G4-cli"/>
+                                    <segue destination="Elx-xF-8Ts" kind="show" identifier="FromCategoryTableViewControllerToNoteTableViewController" id="piN-QN-aBM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -521,6 +522,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="piN-QN-aBM"/>
         <segue reference="EiA-Dp-QUZ"/>
     </inferredMetricsTieBreakers>
     <resources>

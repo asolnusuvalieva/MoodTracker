@@ -73,8 +73,8 @@ class CategoryTableViewController: UITableViewController {
             
             let category = self.categories[indexPath.row]
             categoryViewController.category = category
+            
             self.navigationController?.pushViewController(categoryViewController, animated: true)
-//            self.present(categoryViewController, animated: true, completion: nil)
         }
         editAction.backgroundColor = .green
         
@@ -103,22 +103,6 @@ class CategoryTableViewController: UITableViewController {
 //    }
     
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -127,6 +111,11 @@ class CategoryTableViewController: UITableViewController {
         switch segue.identifier ?? "" {
         case "addCategory":
             os_log("Adding a new category.", log: OSLog.default, type: .debug)
+        case "FromCategoryTableViewControllerToNoteTableViewController":
+            guard let noteTableViewController = segue.destination as? NoteTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
 //        case "editCategory":
 //            guard let categoryViewController = segue.destination as? CategoryViewController else {
 //                fatalError("Unexpected destination: \(segue.destination)")
