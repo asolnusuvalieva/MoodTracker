@@ -1,7 +1,7 @@
 import UIKit
 import os.log
 
-class Note{
+class Note: NSObject, NSCoding{
     //MARK: - Properties
     var title: String
     var category: Category

@@ -53,27 +53,54 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
-    //MARK: - TableView Editing 
-    
+    //MARK: - TableView Editing
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
-
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit"){(rowAction, indexPath) in
+            //edit the row at indexPath
+            guard let categoryViewController = self.storyboard?.instantiateViewController(identifier: "CategoryViewController") as? CategoryViewController else {
+                fatalError("Can't instantiate CategoryViewController")
+            }
+            
+            guard (tableView.cellForRow(at: indexPath) as? CategoryTableViewCell) != nil else{
+                fatalError("The cell is not of type CategoryTableViewCell")
+            }
+            
+            let category = self.categories[indexPath.row]
+            categoryViewController.category = category
+            self.navigationController?.pushViewController(categoryViewController, animated: true)
+//            self.present(categoryViewController, animated: true, completion: nil)
+        }
+        editAction.backgroundColor = .green
+        
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
             // Delete the row from the data source
-            categories.remove(at: indexPath.row)
-            saveCategories()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            self.categories.remove(at: indexPath.row)
+            self.saveCategories()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        deleteAction.backgroundColor = .red
+        
+        return [deleteAction, editAction]
     }
+    
+
+    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            categories.remove(at: indexPath.row)
+//            saveCategories()
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
     
 
     /*
@@ -100,21 +127,21 @@ class CategoryTableViewController: UITableViewController {
         switch segue.identifier ?? "" {
         case "addCategory":
             os_log("Adding a new category.", log: OSLog.default, type: .debug)
-        case "editCategory":
-            guard let categoryViewController = segue.destination as? CategoryViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            
-            guard let selectedCategoryCell = sender as? CategoryTableViewCell else{
-                fatalError("Unexpected sender: \(sender)")
-            }
-            
-            guard let indexPath = tableView.indexPath(for: selectedCategoryCell) else{
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            
-            let category = categories[indexPath.row]
-            categoryViewController.category = category
+//        case "editCategory":
+//            guard let categoryViewController = segue.destination as? CategoryViewController else {
+//                fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//            
+//            guard let selectedCategoryCell = sender as? CategoryTableViewCell else{
+//                fatalError("Unexpected sender: \(sender)")
+//            }
+//
+//            guard let indexPath = tableView.indexPath(for: selectedCategoryCell) else{
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//
+//            let category = categories[indexPath.row]
+//            categoryViewController.category = category
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
