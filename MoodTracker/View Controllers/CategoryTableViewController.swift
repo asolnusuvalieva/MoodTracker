@@ -112,10 +112,21 @@ class CategoryTableViewController: UITableViewController {
         case "addCategory":
             os_log("Adding a new category.", log: OSLog.default, type: .debug)
         case "FromCategoryTableViewControllerToNoteTableViewController":
+            
             guard let noteTableViewController = segue.destination as? NoteTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            
+            guard let selectedCategoryCell = sender as? CategoryTableViewCell else{
+                fatalError("Unexpected sender: \(sender)")
+            }
+           
+            guard let indexPath = tableView.indexPath(for: selectedCategoryCell) else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            let category = categories[indexPath.row]
+            noteTableViewController.filterCategory = category
+            noteTableViewController
+
 //        case "editCategory":
 //            guard let categoryViewController = segue.destination as? CategoryViewController else {
 //                fatalError("Unexpected destination: \(segue.destination)")

@@ -5,13 +5,14 @@ import os.log
 class NoteTableViewController: UITableViewController {
     //MARK: - Properties
     var notes = [Note]()
+    var filterCategory: Category? //if a user decided to filter notes by some category
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
        
         // Load any saved notes, otherwise load sample data.
-        if let savedNotes = loadNotes(){
+        if let savedNotes = onlyRightNotes(){
             notes += savedNotes
         }else{
             //Load the sample data
@@ -146,6 +147,26 @@ class NoteTableViewController: UITableViewController {
             os_log("Failed to save notes...", log: OSLog.default, type: .error)
         }
     }
+    
+    
+    private func onlyRightNotes() -> [Note]?{
+        if let loadedNotes = loadNotes(){
+            var filteredNotes: [Note] = []
+            if let filterCategory = filterCategory{
+                for note in loadedNotes{
+                    if note.category.name == filterCategory.name{
+                        filteredNotes.append(note)
+                    }
+                }
+                return filteredNotes
+            }else{
+                return loadedNotes
+            }
+        }else{
+            return nil
+        }
+    }
+    
     
     private func loadNotes() -> [Note]?{
         //Unarchiving (retrieving)
