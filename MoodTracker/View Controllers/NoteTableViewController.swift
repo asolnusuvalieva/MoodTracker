@@ -9,7 +9,9 @@ class NoteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
+        if  filterCategory == nil{
+            self.navigationItem.leftBarButtonItem = self.editButtonItem //system edit button in the navigation bar for editing the table view
+        }
        
         // Load any saved notes, otherwise load sample data.
         if let savedNotes = onlyRightNotes(){
